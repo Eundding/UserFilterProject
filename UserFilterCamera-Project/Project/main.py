@@ -7,6 +7,7 @@ from Out import Out #나가기 창 임포트
 from Advice import Advice # 도움말 창 임포트
 from AfterStart import *
 from FilterScreen import *
+from RealCamera import *
 
 #UI파일 연결
 #단, UI파일은 Python 코드 파일과 같은 디렉토리에 위치해야한다.
@@ -23,6 +24,7 @@ class WindowClass(QMainWindow, form_class) :
         self.btn_2.clicked.connect(self.button_Advice) #도움말
         self.btn_3.clicked.connect(self.button_Out)  # 나가기
         self.loadImageFromFile()
+        #self.takenPicture() #찍은 사진 업로드
 
     #btn_1이 눌리면 작동할 함수
     def button_Start(self):
@@ -30,7 +32,6 @@ class WindowClass(QMainWindow, form_class) :
         self.aas = AS()
         self.aas.exec()
         self.show()
-
 
     def button_Advice(self):
         self.close()
@@ -51,7 +52,8 @@ class WindowClass(QMainWindow, form_class) :
         self.label_2.setPixmap(self.qPixmapFileVar)
 
 
-if __name__ == "__main__" :
+
+if __name__ == "__main__":
     app = QApplication(sys.argv)
     myWindow = WindowClass()
     myWindow.show()
