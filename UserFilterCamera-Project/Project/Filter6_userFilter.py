@@ -11,10 +11,10 @@ from RealCamera import *
 
 
 ###################################################################################3
-form_FS = uic.loadUiType("FilterScreen.ui")[0]
-class FS(QDialog,QWidget,form_FS):
+form_FilterRyan = uic.loadUiType("FilterScreen.ui")[0]
+class FilterRyan(QDialog,QWidget,form_FilterRyan):
     def __init__(self):
-        super(FS,self).__init__()
+        super(FilterRyan,self).__init__()
         self.initUI()
         self.show()
 
@@ -29,7 +29,7 @@ class FS(QDialog,QWidget,form_FS):
         self.close()
 
     def GoToClick(self): #카메라 화면으로 넘어가도록
-        RealCamera()
+        ryan()
         self.loadImageFromFile()
 
     def GoToAgain(self):
@@ -38,10 +38,11 @@ class FS(QDialog,QWidget,form_FS):
         # self.aas.exec()
         # self.show()
 
+
     # 파이큐티에 사진 띄우는 함수
     def loadImageFromFile(self):
         self.qPixmapFileVar = QPixmap()
-        self.qPixmapFileVar.load("self camera original.jpg")
+        self.qPixmapFileVar.load("self camera ryan.jpg")
         self.label_2.setPixmap(self.qPixmapFileVar)
 
 

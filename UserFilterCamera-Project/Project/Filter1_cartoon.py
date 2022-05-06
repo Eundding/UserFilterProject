@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5 import uic
 from PyQt5.QtGui import *
+from PyQt5 import QtCore, QtGui, QtWidgets, uic
 from Out import Out #나가기 창 임포트
 from Advice import Advice # 도움말 창 임포트
 from AfterStart import *
@@ -11,10 +12,10 @@ from RealCamera import *
 
 
 ###################################################################################3
-form_FS = uic.loadUiType("FilterScreen.ui")[0]
-class FS(QDialog,QWidget,form_FS):
+form_F1 = uic.loadUiType("FilterScreen.ui")[0]
+class F1(QDialog,QWidget,form_F1):
     def __init__(self):
-        super(FS,self).__init__()
+        super(F1,self).__init__()
         self.initUI()
         self.show()
 
@@ -26,22 +27,22 @@ class FS(QDialog,QWidget,form_FS):
 
 
     def GoToGallery(self): #폴더 열기 구현
-        self.close()
+        global filename
+        filename = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File')
 
     def GoToClick(self): #카메라 화면으로 넘어가도록
-        RealCamera()
+        Filter1()
         self.loadImageFromFile()
 
     def GoToAgain(self):
         self.close()
-        # self.aas = AS()
-        # self.aas.exec()
-        # self.show()
+
+
 
     # 파이큐티에 사진 띄우는 함수
     def loadImageFromFile(self):
         self.qPixmapFileVar = QPixmap()
-        self.qPixmapFileVar.load("self camera original.jpg")
+        self.qPixmapFileVar.load("self camera cartoon.jpg")
         self.label_2.setPixmap(self.qPixmapFileVar)
 
 

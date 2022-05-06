@@ -52,7 +52,6 @@ class WindowClass(QMainWindow, form_class) :
         self.label_2.setPixmap(self.qPixmapFileVar)
 
 
-
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     myWindow = WindowClass()
