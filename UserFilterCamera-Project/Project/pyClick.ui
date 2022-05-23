@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>710</width>
-    <height>809</height>
+    <width>924</width>
+    <height>933</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,8 +18,8 @@
     <rect>
      <x>20</x>
      <y>10</y>
-     <width>660</width>
-     <height>770</height>
+     <width>691</width>
+     <height>881</height>
     </rect>
    </property>
    <property name="font">
@@ -28,47 +28,56 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgba(0, 250, 100, 150);
+    <string notr="true">background-color:rgba(0, 0, 0, 0);
 border-radius:10px;</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QPushButton" name="btn_3">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>40</y>
-     <width>631</width>
-     <height>111</height>
+     <x>70</x>
+     <y>730</y>
+     <width>601</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Arial Rounded MT Bold</family>
-     <pointsize>50</pointsize>
+     <pointsize>20</pointsize>
      <weight>75</weight>
      <bold>true</bold>
+     <underline>false</underline>
+     <kerning>true</kerning>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgba(0,0,0,0);
-border:1px solid rgba(0,0,0,0);
-border-bottom-color:rgba(46, 82, 101, 255);
-color:rgb(255,255,255);
-padding-bottom:7px;</string>
+    <string notr="true">QPushButton{
+	color: rgb(23, 156, 145);
+	color: rgb(76, 141, 131);
+	color:rgb(0,0,0);
+	background-color:rgb(58, 76, 168);
+	color: rgb(255, 255, 255);
+	border:0px solid;
+	border-radius:10px;
+}
+QPushButton:hover{
+	background-color:rgb(23, 156, 145);
+}
+</string>
    </property>
    <property name="text">
-    <string>Py-Click! Click!</string>
+    <string>Exit</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>440</y>
-     <width>571</width>
+     <x>70</x>
+     <y>500</y>
+     <width>611</width>
      <height>91</height>
     </rect>
    </property>
@@ -82,73 +91,64 @@ padding-bottom:7px;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">QPushButton{
+	color: rgb(23, 156, 145);
+	color: rgb(76, 141, 131);
+	color:rgb(0,0,0);
+	background-color:rgb(58, 76, 168);
+	color: rgb(255, 255, 255);
+	border:0px solid;
+	border-radius:10px;
+}
+QPushButton:hover{
+	background-color:rgb(23, 156, 145);
+}
+</string>
    </property>
    <property name="text">
-    <string>시작하기</string>
+    <string>START</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>560</y>
-     <width>571</width>
-     <height>91</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>20</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-     <underline>false</underline>
-     <kerning>true</kerning>
-    </font>
-   </property>
-   <property name="text">
-    <string>도움말</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_3">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>670</y>
-     <width>571</width>
-     <height>91</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>20</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-     <underline>false</underline>
-     <kerning>true</kerning>
-    </font>
-   </property>
-   <property name="text">
-    <string>나가기</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
      <x>80</x>
-     <y>174</y>
-     <width>511</width>
-     <height>251</height>
+     <y>620</y>
+     <width>591</width>
+     <height>91</height>
     </rect>
    </property>
-   <property name="text">
-    <string/>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+     <underline>false</underline>
+     <kerning>true</kerning>
+    </font>
    </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	color: rgb(23, 156, 145);
+	color: rgb(76, 141, 131);
+	color:rgb(0,0,0);
+	background-color:rgb(58, 76, 168);
+	color: rgb(255, 255, 255);
+	border:0px solid;
+	border-radius:10px;
+}
+QPushButton:hover{
+	background-color:rgb(23, 156, 145);
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Help</string>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
  <connections/>
 </ui>
