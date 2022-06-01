@@ -10,7 +10,6 @@ from AfterStart import *
 from FilterScreen import *
 from RealCamera import *
 
-
 ###################################################################################3
 form_Coin2Filter = uic.loadUiType("FilterScreen_new.ui")[0]
 class Coin2Filter(QDialog,QWidget,form_Coin2Filter):
@@ -53,6 +52,3 @@ class Coin2Filter(QDialog,QWidget,form_Coin2Filter):
         self.qPixmapFileVar = QPixmap()
         self.qPixmapFileVar.load("self camera coin2.jpg")
         self.label_2.setPixmap(self.qPixmapFileVar)
-
-
-

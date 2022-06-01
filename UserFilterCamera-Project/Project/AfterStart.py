@@ -11,7 +11,6 @@ from AfterStart import *
 from FilterScreen import *
 from RealCamera import *
 from Filter2_cartoon import *
-from Filter2_gradient import *
 from Filter6_userFilter import *
 from Filter3_Coin_1 import *
 from Filter4_Coin_2 import *

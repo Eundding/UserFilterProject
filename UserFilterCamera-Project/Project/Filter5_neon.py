@@ -10,7 +10,6 @@ from AfterStart import *
 from FilterScreen import *
 from RealCamera import *
 
-
 ###################################################################################3
 form_neonFilter = uic.loadUiType("FilterScreen_new.ui")[0]
 

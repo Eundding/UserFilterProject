@@ -17,7 +17,6 @@ class Coin1Filter(QDialog,QWidget,form_Coin1Filter):
         super(Coin1Filter,self).__init__()
         self.initUI()
         self.show()
-        self.loadImageFromFile()
         # basic setting
         self.qPixmapFileVar = QPixmap()
         self.qPixmapFileVar.load("FilterScreen_new.png")
