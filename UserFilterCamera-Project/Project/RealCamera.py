@@ -8,6 +8,7 @@ import cv2
 import numpy as np
 import os
 import time, dlib
+from PIL import Image
 
 
 def RealCamera(): # original
@@ -27,7 +28,7 @@ def RealCamera(): # original
 
         if key == ord(chr(32)):
             current = str(time.time())
-            cv2.imwrite('self camera original.jpg', frame)
+            cv2.imwrite('C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\self camera original.jpg', frame)
             print('saved_image')
 
         elif key == ord('q'):
@@ -66,7 +67,10 @@ def Filter2(): # cartoon Filter
 
         if key == ord(chr(32)):
             current = str(time.time())
-            cv2.imwrite('self camera cartoon.jpg', frame)
+            cv2.imwrite('C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\self camera cartoon.jpg', frame)
+            # img = Image.open('C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\self camera cartoon.jpg')
+            # img_resize = img.resize((790, 450))
+            # img_resize.save('C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\self camera cartoon1.jpg')
             print('saved_image')
 
         if key == ord('q'):  # esc 누르면 종료
@@ -105,7 +109,7 @@ def Filter3():
 
         if key == ord(chr(32)):
             current = str(time.time())
-            cv2.imwrite('self camera coin1.jpg', frame)
+            cv2.imwrite('C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\self camera coin1.jpg', frame)
             print('saved_image')
 
         if key == ord('q'):  # esc 누르면 종료
@@ -114,39 +118,83 @@ def Filter3():
     #cap.release()
 #########################################################################################
 
-def Coin_y(img):
-    h, w = img.shape[:2]
-    img2 = cv2.resize(img, (w // 2, h // 2))
-    dy = cv2.Sobel(img, -1, 0, 1, delta=128)  # delta 값을 지정해주지 않으면 미분이 - 부분은 0
-    return dy
-
 def Filter4():
-    cap = cv2.VideoCapture(0)  # 카메라 오픈.
+    cap = cv2.VideoCapture(0)
+    WIDTH = 500
+    HEIGHT = 300
+    cap.set(cv2.CAP_PROP_FRAME_WIDTH, WIDTH)
+    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, HEIGHT)
+    rows, cols = HEIGHT, WIDTH
+    map_y, map_x = np.indices((rows, cols), dtype=np.float32)
 
-    if not cap.isOpened():
-        print('video open failed!')
-        sys.exit()
+    map_mirrorh_x, map_mirrorh_y = map_x.copy(), map_y.copy()
+    map_mirrorv_x, map_mirrorv_y = map_x.copy(), map_y.copy()
 
-    while True:  # 무한 루프
-        ret, frame = cap.read()  # 웹 카메라의 프레임값 불러오기
+    map_mirrorh_x[:, cols // 2:] = cols - map_mirrorh_x[:, cols // 2:] - 1
 
-        if not ret:
+    map_mirrorv_y[rows // 2:, :] = rows - map_mirrorv_y[rows // 2:, :] - 1
+
+    map_wave_x, map_wave_y = map_x.copy(), map_y.copy()
+    map_wave_x = map_wave_x + 15 * np.sin(map_y / 20)
+    map_wave_y = map_wave_y + 15 * np.sin(map_x / 20)
+
+    map_lenz_x = 2 * map_x / (cols - 1) - 1
+    map_lenz_y = 2 * map_y / (rows - 1) - 1
+
+    r, theta = cv2.cartToPolar(map_lenz_x, map_lenz_y)
+    r_convex = r.copy()
+    r_concave = r.copy()
+
+    r_convex[r < 1] = r_convex[r < 1] ** 2
+    print(r.shape, r_convex[r < 1].shape)
+
+    r_concave[r < 1] = r_concave[r < 1] ** 0.5
+
+    map_convex_x, map_convex_y = cv2.polarToCart(r_convex, theta)
+    map_concave_x, map_concave_y = cv2.polarToCart(r_concave, theta)
+
+    map_convex_x = ((map_convex_x + 1) * cols - 1) / 2
+    map_convex_y = ((map_convex_y + 1) * rows - 1) / 2
+    map_concave_x = ((map_concave_x + 1) * cols - 1) / 2
+    map_concave_y = ((map_concave_y + 1) * rows - 1) / 2
+
+    while True:
+        ret, frame = cap.read()
+        frame = frame[:HEIGHT, :WIDTH]
+
+        mirrorh = cv2.remap(frame, map_mirrorh_x, map_mirrorh_y, cv2.INTER_LINEAR)
+        mirrorv = cv2.remap(frame, map_mirrorv_x, map_mirrorv_y, cv2.INTER_LINEAR)
+        wave = cv2.remap(frame, map_wave_x, map_wave_y, cv2.INTER_LINEAR, \
+                         None, cv2.BORDER_REPLICATE)
+        convex = cv2.remap(frame, map_convex_x, map_convex_y, cv2.INTER_LINEAR)
+        concave = cv2.remap(frame, map_concave_x, map_concave_y, cv2.INTER_LINEAR)
+
+        r1 = np.hstack((frame, mirrorh, mirrorv))
+        r2 = np.hstack((wave, convex, concave))
+        merged = np.vstack((r1, r2))
+
+        cv2.imshow('distorted', merged)
+        key = cv2.waitKey(1) & 0xFF
+        if key == ord('1'):
+            cv2.imwrite("frame.jpg", frame)
+        if key == ord('2'):
+            cv2.imwrite("mirrorh.jpg", mirrorh)
+        if key == ord('3'):
+            cv2.imwrite("mirrorv.jpg", mirrorv)
+        if key == ord('4'):
+            cv2.imwrite("wave.jpg", wave)
+        if key == ord('5'):
+            cv2.imwrite("convex.jpg", convex)
+        if key == ord('6'):
+            cv2.imwrite("concave.jpg", concave)
+        if key == ord('q'):
+            cv2.imwrite("C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\merged.jpg", merged)
+            img = Image.open('C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\merged.jpg')
+            img_resize = img.resize((790, 450))
+            img_resize.save('C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\merged1.jpg')
+
             break
 
-        frame = Coin_y(frame)  # 프레임에 필터 적용
-
-        cv2.imshow('frame', frame)
-        key = cv2.waitKey(1)  # 다음 프레임을 위해서 빠르게 1ms 간격으로 전환
-
-        if key == ord(chr(32)):
-            current = str(time.time())
-            cv2.imwrite('self camera coin2.jpg', frame)
-            print('saved_image')
-
-        if key == ord('q'):  # esc 누르면 종료
-            break
-
-    #cap.release()
 ############################################################################################
 
 def gradient_filter(img):
@@ -179,7 +227,7 @@ def Filter5():
 
         if key == ord(chr(32)):
             current = str(time.time())
-            cv2.imwrite('self camera neon.jpg', frame)
+            cv2.imwrite('C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\self camera neon.jpg', frame)
             print('saved_image')
 
         if key == ord('q'):  # esc 누르면 종료
@@ -222,8 +270,13 @@ def Filter6():
     predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
 
     capture = cv2.VideoCapture(CAM_ID)
-    overlay = cv2.imread('ryan_transparent.png', cv2.IMREAD_UNCHANGED)
-    #overlay = cv2.imread('금붕어.png', cv2.IMREAD_UNCHANGED)
+
+    file = "C:\\Users\\dkan9\\PycharmProjects\\camera_project\\UserFilterCamera-Project\\Project\\Transparent_cpp.png"
+    if os.path.isfile(file):
+        overlay = cv2.imread('Transparent_cpp.png', cv2.IMREAD_UNCHANGED)
+    else:
+        overlay = cv2.imread('ryan_transparent.png', cv2.IMREAD_UNCHANGED)
+
 
 
     capture.set(cv2.CAP_PROP_FRAME_WIDTH,640)
@@ -271,7 +324,7 @@ def Filter6():
 
         if key == ord(chr(32)):
             current = str(time.time())
-            cv2.imwrite('self camera ryan.jpg', result)
+            cv2.imwrite('C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\self camera ryan.jpg', result)
             print('saved_image')
 
         if key == ord('q'):  # esc 누르면 종료

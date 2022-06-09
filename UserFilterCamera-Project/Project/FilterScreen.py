@@ -10,7 +10,7 @@ from FilterScreen import *
 from RealCamera import *
 
 ###################################################################################3
-form_FS = uic.loadUiType("FilterScreen_new.ui")[0]
+form_FS = uic.loadUiType("FilterScreen_other.ui")[0]
 
 
 class FS(QDialog,QWidget,form_FS):
@@ -26,21 +26,10 @@ class FS(QDialog,QWidget,form_FS):
 
     def initUI(self):
         self.setupUi(self)
-        self.btn_Gallery.clicked.connect(self.GoToGallery)
         self.btn_Click.clicked.connect(self.GoToClick)
         self.btn_different.clicked.connect(self.GoToAgain)
 
 
-    def GoToGallery(self): #폴더 열기 구현
-        global filename
-        # filename = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File')
-        filename = QFileDialog.getOpenFileName(self, "File Load",
-                                               'C:/Users/dkan9/PycharmProjects/camera_project/Gallery',
-                                               'PNG File(*.png);; JPG File(*.jpg)')
-        print(filename[0])  # 파일 경로 포함
-        self.qPixmapFileVar = QPixmap()
-        self.qPixmapFileVar.load(filename[0])
-        self.label_2.setPixmap(self.qPixmapFileVar)
 
     def GoToClick(self): #카메라 화면으로 넘어가도록
         RealCamera()
@@ -55,7 +44,7 @@ class FS(QDialog,QWidget,form_FS):
     # 파이큐티에 사진 띄우는 함수
     def loadImageFromFile(self):
         self.qPixmapFileVar = QPixmap()
-        self.qPixmapFileVar.load("self camera original.jpg")
+        self.qPixmapFileVar.load("C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\self camera original.jpg")
         self.label_2.setPixmap(self.qPixmapFileVar)
 
 

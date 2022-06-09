@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>761</width>
+    <width>730</width>
     <height>1065</height>
    </rect>
   </property>
@@ -30,7 +30,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>390</y>
+     <y>410</y>
      <width>301</width>
      <height>41</height>
     </rect>
@@ -64,9 +64,9 @@ QPushButton:hover{
   <widget class="QPushButton" name="btn_2">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>390</y>
-     <width>301</width>
+     <x>390</x>
+     <y>410</y>
+     <width>291</width>
      <height>41</height>
     </rect>
    </property>
@@ -93,7 +93,7 @@ QPushButton:hover{
 </string>
    </property>
    <property name="text">
-    <string>Cartoon</string>
+    <string>Cartoon Filter</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3">
@@ -128,15 +128,15 @@ QPushButton:hover{
 </string>
    </property>
    <property name="text">
-    <string>동전필터-1</string>
+    <string>Coin Filter</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4">
    <property name="geometry">
     <rect>
-     <x>380</x>
+     <x>390</x>
      <y>640</y>
-     <width>301</width>
+     <width>291</width>
      <height>41</height>
     </rect>
    </property>
@@ -163,14 +163,14 @@ QPushButton:hover{
 </string>
    </property>
    <property name="text">
-    <string>동전필터-2</string>
+    <string>Distortion Filter</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>890</y>
+     <y>880</y>
      <width>301</width>
      <height>41</height>
     </rect>
@@ -198,15 +198,15 @@ QPushButton:hover{
 </string>
    </property>
    <property name="text">
-    <string>네온 필터</string>
+    <string>Neon Filter</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>890</y>
-     <width>301</width>
+     <x>390</x>
+     <y>880</y>
+     <width>291</width>
      <height>41</height>
     </rect>
    </property>

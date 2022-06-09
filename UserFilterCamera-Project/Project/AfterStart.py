@@ -68,7 +68,7 @@ class AS(QDialog,QWidget,form_AS):
     def loadImageFromFile(self):
     # QPixmap 객체 생성 후 이미지 파일을 이용하여 QPixmap에 사진 데이터 Load하고, Label을 이용하여 화면에 표시
         self.qPixmapFileVar = QPixmap()
-        self.qPixmapFileVar.load("AfterStart_new_re.png")
+        self.qPixmapFileVar.load("Screen_Real.png")
         self.label.setPixmap(self.qPixmapFileVar)
 
 

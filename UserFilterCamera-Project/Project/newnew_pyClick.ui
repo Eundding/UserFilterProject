@@ -41,7 +41,7 @@ border-radius:10px;</string>
      <x>60</x>
      <y>660</y>
      <width>661</width>
-     <height>91</height>
+     <height>101</height>
     </rect>
    </property>
    <property name="font">
@@ -76,9 +76,9 @@ QPushButton:hover{
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>540</y>
+     <y>530</y>
      <width>661</width>
-     <height>91</height>
+     <height>101</height>
     </rect>
    </property>
    <property name="font">
@@ -111,9 +111,9 @@ QPushButton:hover{
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>790</y>
+     <y>800</y>
      <width>661</width>
-     <height>91</height>
+     <height>101</height>
     </rect>
    </property>
    <property name="font">
