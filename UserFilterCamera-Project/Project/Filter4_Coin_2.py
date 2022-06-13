@@ -25,7 +25,7 @@ class Coin2Filter(QDialog,QWidget,form_Coin2Filter):
     def initUI(self):
         self.setupUi(self)
         self.btn_Click.clicked.connect(self.GoToClick)
-        self.btn_different.clicked.connect(self.GoToAgain)
+        #self.btn_different.clicked.connect(self.GoToAgain)
 
 
 
@@ -33,8 +33,8 @@ class Coin2Filter(QDialog,QWidget,form_Coin2Filter):
         Filter4()
         self.loadImageFromFile()
 
-    def GoToAgain(self):
-        self.close()
+    # def GoToAgain(self):
+    #     self.close()
 
     # 파이큐티에 사진 띄우는 함수
     def loadImageFromFile(self):

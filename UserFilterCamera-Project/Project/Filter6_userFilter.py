@@ -45,7 +45,7 @@ class FilterRyan(QDialog, QWidget, form_FilterRyan):
         self.setupUi(self)
         self.btn_Gallery.clicked.connect(self.GoToGallery)
         self.btn_Click.clicked.connect(self.GoToClick)
-        self.btn_different.clicked.connect(self.GoToAgain)
+       # self.btn_different.clicked.connect(self.GoToAgain)
 
     def GoToGallery(self):  # 폴더 열기 구현
         global filename
@@ -186,11 +186,11 @@ class FilterRyan(QDialog, QWidget, form_FilterRyan):
         Filter6()
         self.loadImageFromFile()
 
-    def GoToAgain(self):
-        self.close()
-        # self.aas = AS()
-        # self.aas.exec()
-        # self.show()
+    # def GoToAgain(self):
+    #     self.close()
+    #     # self.aas = AS()
+    #     # self.aas.exec()
+    #     # self.show()
 
     # 파이큐티에 사진 띄우는 함수
     def loadImageFromFile(self):

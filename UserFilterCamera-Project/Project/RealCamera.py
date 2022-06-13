@@ -176,17 +176,17 @@ def Filter4():
         cv2.imshow('distorted', merged)
         key = cv2.waitKey(1) & 0xFF
         if key == ord('1'):
-            cv2.imwrite("frame.jpg", frame)
+            cv2.imwrite("C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\frame.jpg", frame)
         if key == ord('2'):
-            cv2.imwrite("mirrorh.jpg", mirrorh)
+            cv2.imwrite("C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\mirrorh.jpg", mirrorh)
         if key == ord('3'):
-            cv2.imwrite("mirrorv.jpg", mirrorv)
+            cv2.imwrite("C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\mirrorv.jpg", mirrorv)
         if key == ord('4'):
-            cv2.imwrite("wave.jpg", wave)
+            cv2.imwrite("C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\wave.jpg", wave)
         if key == ord('5'):
-            cv2.imwrite("convex.jpg", convex)
+            cv2.imwrite("C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\convex.jpg", convex)
         if key == ord('6'):
-            cv2.imwrite("concave.jpg", concave)
+            cv2.imwrite("C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\concave.jpg", concave)
         if key == ord('q'):
             cv2.imwrite("C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\merged.jpg", merged)
             img = Image.open('C:\\Users\\dkan9\\PycharmProjects\\camera_project\\Gallery\\merged.jpg')

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>360</width>
+    <height>177</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>50</y>
+     <x>0</x>
+     <y>0</y>
      <width>361</width>
      <height>181</height>
     </rect>
@@ -29,8 +29,10 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgba(100, 100, 230, 100);
-border-radius:10px; 모서리 둥글게
+    <string notr="true">
+color:rgaba(255,255,255,255);
+background-color:rgba(58, 76, 168, 255);
+border-radius:10px;
 </string>
    </property>
    <property name="text">
@@ -40,40 +42,11 @@ border-radius:10px; 모서리 둥글게
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>90</y>
-     <width>361</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>15</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color:rgba(100, 100, 230, 0);
-border-radius:10px; 모서리 둥글게
-
-</string>
-   </property>
-   <property name="text">
-    <string>정말 그만하실건가요?</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
   <widget class="QPushButton" name="Yes_button">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>170</y>
+     <x>40</x>
+     <y>120</y>
      <width>141</width>
      <height>41</height>
     </rect>
@@ -85,14 +58,36 @@ border-radius:10px; 모서리 둥글게
   <widget class="QPushButton" name="No_button">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>170</y>
+     <x>200</x>
+     <y>120</y>
      <width>141</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
     <string>아니오</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>50</y>
+     <width>241</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(58, 76, 168, 255);
+color:rgba(255,255,255,255);
+border-radius:10px;</string>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Gulim'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#ffffff;&quot;&gt;정말 그만하실 건가요?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
  </widget>

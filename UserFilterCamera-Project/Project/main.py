@@ -28,13 +28,13 @@ class WindowClass(QMainWindow, form_class) :
 
     # btn_1이 눌리면 작동할 함수
     def button_Start(self):
-        self.close()
+        #self.close()
         self.aas = AS()
         self.aas.exec()
         self.show()
 
     def button_Advice(self):
-        self.close()
+        #self.close()
         self.advice = Advice()
         self.advice.exec()
         self.show()

@@ -27,7 +27,7 @@ class FS(QDialog,QWidget,form_FS):
     def initUI(self):
         self.setupUi(self)
         self.btn_Click.clicked.connect(self.GoToClick)
-        self.btn_different.clicked.connect(self.GoToAgain)
+        #self.btn_different.clicked.connect(self.GoToAgain)
 
 
 
@@ -35,11 +35,11 @@ class FS(QDialog,QWidget,form_FS):
         RealCamera()
         self.loadImageFromFile()
 
-    def GoToAgain(self):
-        self.close()
-        # self.aas = AS()
-        # self.aas.exec()
-        # self.show()
+    # def GoToAgain(self):
+    #     self.close()
+    #     self.aas = AS()
+    #     self.aas.exec()
+    #     self.show()
 
     # 파이큐티에 사진 띄우는 함수
     def loadImageFromFile(self):

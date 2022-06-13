@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>768</width>
-    <height>974</height>
+    <width>734</width>
+    <height>965</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>0</y>
      <width>721</width>
      <height>961</height>
@@ -38,7 +38,7 @@ border-radius:10px;</string>
   <widget class="QPushButton" name="btn_2">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>40</x>
      <y>660</y>
      <width>661</width>
      <height>101</height>
@@ -75,7 +75,7 @@ QPushButton:hover{
   <widget class="QPushButton" name="btn_1">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>40</x>
      <y>530</y>
      <width>661</width>
      <height>101</height>
@@ -110,7 +110,7 @@ QPushButton:hover{
   <widget class="QPushButton" name="btn_3">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>40</x>
      <y>800</y>
      <width>661</width>
      <height>101</height>

@@ -26,17 +26,16 @@ class neonFilter(QDialog,QWidget,form_neonFilter):
     def initUI(self):
         self.setupUi(self)
         self.btn_Click.clicked.connect(self.GoToClick)
-        self.btn_different.clicked.connect(self.GoToAgain)
-
+       # self.btn_different.clicked.connect(self.GoToAgain)
 
 
 
     def GoToClick(self): #카메라 화면으로 넘어가도록
         Filter5()
         self.loadImageFromFile()
-
-    def GoToAgain(self):
-        self.close()
+    #
+    # def GoToAgain(self):
+    #     self.close()
 
     # 파이큐티에 사진 띄우는 함수
     def loadImageFromFile(self):

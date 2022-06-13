@@ -65,7 +65,7 @@ QPushButton:hover{
   <widget class="QPushButton" name="btn_Click">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>400</x>
      <y>570</y>
      <width>151</width>
      <height>71</height>
@@ -96,43 +96,6 @@ QPushButton:hover{
    </property>
    <property name="text">
     <string>Click</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_different">
-   <property name="geometry">
-    <rect>
-     <x>510</x>
-     <y>570</y>
-     <width>151</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>15</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-	color: rgb(23, 156, 145);
-	color: rgb(76, 141, 131);
-	color:rgb(0,0,0);
-	background-color:rgb(58, 76, 168);
-	background-color: rgb(136, 194, 219);
-	color: rgb(255, 255, 255);
-	border:0px solid;
-	border-radius:10px;
-}
-QPushButton:hover{
-	background-color:rgb(23, 156, 145);
-}
-</string>
-   </property>
-   <property name="text">
-    <string>Different
-Filter</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
